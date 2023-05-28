@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, Image, StyleSheet, View } from "react-native";
+import { Text, Image, View } from "react-native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 
+import { Spacer } from "../../../components/spacer/spacer.component";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 
@@ -30,6 +31,7 @@ const Title = styled(Text)`
 const Info = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
+
 const Rating = styled.View`
   flex-direction: row;
   padding-top: ${(props) => props.theme.space[2]};
@@ -38,7 +40,7 @@ const Rating = styled.View`
 
 const Section = styled.View`
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
 `;
 
 const SectionEnd = styled.View`
@@ -49,12 +51,12 @@ const SectionEnd = styled.View`
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
-    name = "Some Restaursant",
+    name = "Some Restaurant",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://www.foodiesfeed.com/wp-content/uploads/2023/03/colorful-ice-cream-cone.jpg",
     ],
-    address = "100 some randome street",
+    address = "100 some random street",
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
@@ -79,13 +81,12 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                 CLOSED TEMPORARILY
               </Text>
             )}
-            <View style={{ paddingLeft: 16 }} />
-            {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-            <View style={{ paddingLeft: 16 }} />
-            <Image
-              style={{ pddingLeft: 16, width: 15, height: 15 }}
-              source={{ uri: icon }}
-            />
+            <Spacer position="left" size="large">
+              {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
+            </Spacer>
+            <Spacer position="left" size="large">
+              <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+            </Spacer>
           </SectionEnd>
         </Section>
         <Address>{address}</Address>
