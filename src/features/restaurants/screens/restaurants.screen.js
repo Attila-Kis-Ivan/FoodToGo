@@ -11,13 +11,14 @@ import { RestaurantsContext } from "../../../services/restaurants/restaurants.co
 import { Search } from "../components/search.component";
 
 const RestaurantList = styled(FlatList).attrs({
-  contentContainerStyle: { padding: 16 },
+  contentContainerStyle: {
+    padding: 16,
+  },
 })``;
 
 const Loading = styled(ActivityIndicator)`
   margin-left: -25px;
 `;
-
 const LoadingContainer = styled.View`
   position: absolute;
   top: 50%;
