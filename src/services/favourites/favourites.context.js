@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import { Children } from "react";
 
 export const FavouritesContext = createContext();
 
@@ -14,6 +13,8 @@ export const FavouritesContextProvider = ({ children }) => {
     const newFavourites = favourites.filter(
       (x) => x.placeId !== restaurant.placeId
     );
+
+    setFavourites(newFavourites);
   };
   return (
     <FavouritesContext.Provider
