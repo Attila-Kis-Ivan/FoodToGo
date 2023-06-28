@@ -14,9 +14,9 @@ export const AccountScreen = ({ navigation }) => {
       <AccountCover />
       <AccountContainer>
         <AuthButton
-          icon="lock-open-outline"
+          icon="email"
           mode="contained"
-          onPress={() => navigation.navigate("Rogin")}
+          onPress={() => navigation.navigate("Login")}
         >
           Login
         </AuthButton>

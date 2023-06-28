@@ -10,7 +10,7 @@ import { loginRequest } from "./authentication.service";
 
 export const AuthenticationContext = createContext();
 
-export const AuthenticationContextPrpvider = ({ children }) => {
+export const AuthenticationContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
@@ -30,7 +30,7 @@ export const AuthenticationContextPrpvider = ({ children }) => {
     loginRequest(auth, email, password)
       .then((u) => {
         setUser(u);
-        setIsLoading(false);
+        //setIsLoading(false);
       })
       .catch((e) => {
         setIsLoading(false);
