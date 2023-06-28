@@ -1,6 +1,7 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ThemeProvider } from "styled-components/native";
+import { initializeApp } from "firebase/app";
 
 import {
   useFonts as useOswald,
@@ -22,6 +23,8 @@ const firebaseConfig = {
   messagingSenderId: "660325960529",
   appId: "1:660325960529:web:d5ff5ea75607d966f9e170",
 };
+
+initializeApp(firebaseConfig);
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
