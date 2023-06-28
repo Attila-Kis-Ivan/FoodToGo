@@ -26,17 +26,18 @@ export const AuthenticationContextProvider = ({ children }) => {
   });
 
   const onLogin = (email, password) => {
-    isLoading(true);
+    setIsLoading(true);
     loginRequest(auth, email, password)
       .then((u) => {
         setUser(u);
-        //setIsLoading(false);
+        setIsLoading(false);
       })
       .catch((e) => {
         setIsLoading(false);
         setError(e.toString());
       });
   };
+
   const onRegister = (email, password, repeatedPassword) => {
     setIsLoading(true);
     if (password !== repeatedPassword) {
@@ -60,9 +61,11 @@ export const AuthenticationContextProvider = ({ children }) => {
       setError(null);
     });
   };
+
   return (
     <AuthenticationContext.Provider
       value={{
+        isAuthenticated: !!user,
         user,
         isLoading,
         error,
