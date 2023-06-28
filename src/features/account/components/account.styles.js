@@ -29,12 +29,13 @@ export const AuthButton = styled(Button).attrs({
   color: colors.brand.primary,
 })`
   padding: ${(props) => props.theme.space[2]};
-  margin: ${(props) => props.theme.space[1]};
+  margin: ${(props) => props.theme.space[2]};
   border-radius: 10px;
 `;
 
 export const AuthInput = styled(TextInput)`
   width: 300px;
+  margin-top: 10px;
 `;
 
 export const Title = styled(Text)`
