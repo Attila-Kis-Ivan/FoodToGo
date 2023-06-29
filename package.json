@@ -23,6 +23,7 @@
     "expo-status-bar": "~1.4.4",
     "firebase": "^9.23.0",
     "i": "^0.3.7",
+    "lottie-react-native": "5.1.4",
     "react": "18.2.0",
     "react-native": "0.71.8",
     "react-native-gesture-handler": "^2.10.1",
