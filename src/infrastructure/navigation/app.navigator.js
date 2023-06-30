@@ -24,12 +24,13 @@ const TAB_ICON = {
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
   return {
+    headerShown: false,
     tabBarIcon: ({ size, color }) => (
       <Ionicons name={iconName} size={size} color={color} />
     ),
     tabBarActiveTintColor: colors.brand.primary,
     tabBarInactiveTintColor: colors.brand.muted,
-    headerShown: false,
+    
   };
 };
 
@@ -38,10 +39,12 @@ export const AppNavigator = () => (
     <LocationContextProvider>
       <RestaurantsContextProvider>
         <Tab.Navigator
-          screenOptions={createScreenOptions}
-          tabBarOptions={{
-            activeTintColor: "tomato",
-            inactiveTintColor: "gray",
+        screenOptions={createScreenOptions}
+        tabBarOption={{
+            activeTintColor: colors.brand.primary,
+            inactiveTintColor: colors.brand.muted,
+
+
           }}
         >
           <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
